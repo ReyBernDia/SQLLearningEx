@@ -139,7 +139,7 @@ def handle_input():
             tokens = input_string.split()
             command = tokens[0]
             if command == 'add':
-                if len(tokens[1:] < 3):
+                if len(tokens[1:]) < 3 :
                     raise ValueError
                 title = tokens[1]
                 max_grade = tokens[-1]
@@ -174,7 +174,9 @@ def handle_input():
                     if command != "quit":
                         print("Invalid Entry. Try again.")
         except ValueError:
-            print('ERROR!')
+            print('ERROR! Different input than expected.')
+        except TypeError:
+            print('ERROR! No entry in database.')
 
 
 if __name__ == "__main__":
